@@ -23,7 +23,6 @@ resource "kind_cluster" "kind-local-cluster" {
       for_each = range(local.worker_count)
       content {
         role = "worker"
-        tag  = "worker-${node.key + 1}"  # node.key empieza en 0, lo ajustamos a 1,2,3
       }
     }
 
